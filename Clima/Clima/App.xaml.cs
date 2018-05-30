@@ -7,13 +7,14 @@ using Xamarin.Forms;
 
 namespace Clima
 {
+    using View;
 	public partial class App : Application
 	{
 		public App ()
 		{
 			InitializeComponent();
 
-			MainPage = new Clima.MainPage();
+			MainPage = new WeatherPage();
 		}
 
 		protected override void OnStart ()

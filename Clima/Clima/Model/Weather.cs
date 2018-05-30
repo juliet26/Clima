@@ -2,7 +2,7 @@
 //
 //    using Clima.Model;
 //
-//    var welcome = Welcome.FromJson(jsonString);
+//    var weather = Weather.FromJson(jsonString);
 
 namespace Clima.Model
 {
@@ -13,7 +13,7 @@ namespace Clima.Model
     using Newtonsoft.Json;
     using Newtonsoft.Json.Converters;
 
-    public partial class Welcome
+    public partial class Weather
     {
         [JsonProperty("query")]
         public Query Query { get; set; }
@@ -237,14 +237,14 @@ namespace Clima.Model
 
     public enum Text { MostlyCloudy, PartlyCloudy, Sunny };
 
-    public partial class Welcome
+    public partial class Weather
     {
-        public static Welcome FromJson(string json) => JsonConvert.DeserializeObject<Welcome>(json, Clima.Model.Converter.Settings);
+        public static Weather FromJson(string json) => JsonConvert.DeserializeObject<Weather>(json, Clima.Model.Converter.Settings);
     }
 
     public static class Serialize
     {
-        public static string ToJson(this Welcome self) => JsonConvert.SerializeObject(self, Clima.Model.Converter.Settings);
+        public static string ToJson(this Weather self) => JsonConvert.SerializeObject(self, Clima.Model.Converter.Settings);
     }
 
     internal static class Converter
@@ -296,3 +296,4 @@ namespace Clima.Model
         }
     }
 }
+
